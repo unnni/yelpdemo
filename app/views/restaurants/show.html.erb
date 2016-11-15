@@ -25,8 +25,7 @@
 </p>
 
 <%= link_to "Write Reviews", new_restaurant_review_path(@restaurant), class: "btn btn-primary"%>
-
-  </div>
+</div>
 
 
   <div class="col-md-9">
@@ -35,8 +34,21 @@
      <% else %> 
      <table class="table">
       <tbody>
+        <thead>
+          <tr>
+           <th class="col-md-3"></th>
+           <th class="col-md-9"></th>
+          </tr>
+        </thead>
+
           <% @reviews.each do|review| %>
             <tr>
+              <td>
+                 <h4>
+                  <%= "#{review.user.first_name.capitalize} #{review.user.last_name.capitalize[0]}." %>
+                 </h4>
+                 <p><%= review.created_at.strftime("%-d/%-m/%y") %> </p>
+                </td>
               <td>
                 <div class = "star-rating" data-score = <%= review.rating %> ></div>
                 <p> <%= h(review.comment).gsub(/\n/, '<br>').html_safe %> </p>
@@ -50,8 +62,6 @@
 	    
 	<% end %>
   </div>
-
-
 </div>
 
 
