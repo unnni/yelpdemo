@@ -31,6 +31,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'devise'
 gem 'searchkick'	
+gem 'figaro'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
